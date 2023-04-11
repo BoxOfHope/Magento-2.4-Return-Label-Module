@@ -117,7 +117,7 @@ class BohDeliveryController extends Action
         return [
             "pickup" => [
                 "name" => $shippingAddress->getFirstname() . ' ' . $shippingAddress->getLastname(),
-                "street" => "6146 Honey Bluff Parkway 2",
+                "street" =>  $shippingAddress->getStreet(),
                 "postcode" => $shippingAddress->getPostcode(),
                 "city" => $shippingAddress->getCity(),
                 "email" => $shippingAddress->getEmail(),

@@ -3,7 +3,7 @@
 use Boxofhope\ReturnLabelPlugin\Block\Admin\Order\View\Tab\BoxOfHopeReturnLabelTab;
 ?>
 
-<div class="fieldset-wrapper order-information">
+<div>
     <h2><?php echo __('Collaboration with BoxOfHope - label')?></h2>
     <?php if ($block->isOrderHasBohReturnLabel()): ?>
         <p><strong><?php echo __('<a href="boxofhope.pl/en" target="_blank">BoxOfHope.pl</a> delivery number: ')?></strong>
@@ -19,5 +19,24 @@ use Boxofhope\ReturnLabelPlugin\Block\Admin\Order\View\Tab\BoxOfHopeReturnLabelT
                         That\'s why we encourage you to take advantage of this functionality and enable your
                         customers to easily donate unwanted items to charity. Together, we can work for the
                         benefit of the local community and the natural environment, making the world a better place.')?>
+    </p>
+</div>
+<br/>
+<hr>
+<br/>
+<div class="">
+    <h2>Współpraca z BoxOfHope - Etykieta</h2>
+    <?php if ($block->isOrderHasBohReturnLabel()): ?>
+        <p><strong>Numer nadawczy paczki <a href="boxofhope.pl/en" target="_blank">BoxOfHope.pl</a>: </strong>
+            <?php echo $block->getBohReturnLabelDeliveryId()?></p>
+        <p><strong>Kod zwrotu paczki <a href="boxofhope.pl/en" target="_blank">BoxOfHope.pl</a>: </strong>
+            <?php echo $block->getBohReturnLabelReturnCode()?></p>
+        <br/>
+    <?php endif ?>
+    <p>
+        Przyłączając się do naszej inicjatywy, pomagasz w utrzymaniu środowiska naturalnego, promując ideę gospodarki o obiegu zamkniętym. Dzięki Twojemu zaangażowaniu, możemy przyczynić się do zmniejszenia ilości odpadów i lepszego wykorzystania zasobów. Razem możemy zrobić wiele dobrego dla naszej planety.
+        <br/>
+        <br/>
+        Dlatego zachęcamy Cię, abyś wykorzystał tę funkcjonalność i umożliwił swoim klientom łatwe przekazywanie niepotrzebnych przedmiotów na cele charytatywne. Razem możemy działać na rzecz społeczności lokalnej i środowiska naturalnego, zmieniając świat na lepsze.
     </p>
 </div>

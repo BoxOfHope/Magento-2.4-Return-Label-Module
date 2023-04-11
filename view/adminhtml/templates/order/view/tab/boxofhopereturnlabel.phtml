@@ -1,0 +1,23 @@
+<?php
+/** @var $block BoxOfHopeReturnLabelTab */
+use Boxofhope\ReturnLabelPlugin\Block\Admin\Order\View\Tab\BoxOfHopeReturnLabelTab;
+?>
+
+<div class="fieldset-wrapper order-information">
+    <h2><?php echo __('Collaboration with BoxOfHope - label')?></h2>
+    <?php if ($block->isOrderHasBohReturnLabel()): ?>
+        <p><strong><?php echo __('<a href="boxofhope.pl/en" target="_blank">BoxOfHope.pl</a> delivery number: ')?></strong>
+            <?php echo $block->getBohReturnLabelDeliveryId()?></p>
+        <p><strong><?php echo __('<a href="boxofhope.pl/en" target="_blank">BoxOfHope.pl</a> return code: ')?></strong>
+            <?php echo $block->getBohReturnLabelReturnCode()?></p>
+        <br/>
+    <?php endif ?>
+    <p>
+    <?php echo __('By joining our initiative, you are helping to maintain the natural environment by
+                        promoting the idea of a closed-loop economy. With your commitment, we can reduce waste
+                        and make better use of resources. Together, we can do a lot of good for our planet. <br/> <br/>
+                        That\'s why we encourage you to take advantage of this functionality and enable your
+                        customers to easily donate unwanted items to charity. Together, we can work for the
+                        benefit of the local community and the natural environment, making the world a better place.')?>
+    </p>
+</div>

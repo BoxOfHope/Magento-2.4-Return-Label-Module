@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      layout="admin-2columns-left"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="left">
+            <referenceBlock name="sales_order_tabs">
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">boxofhope_returnlabelplugin_tab</argument>
+                    <argument name="block" xsi:type="string">Boxofhope\ReturnLabelPlugin\Block\Admin\Order\View\Tab\BoxOfHopeReturnLabelTab</argument>
+                </action>
+            </referenceBlock>
+        </referenceContainer>
+        <referenceBlock name="order_additional_info">
+            <block class="Boxofhope\ReturnLabelPlugin\Block\Admin\Order\View\View" name="sales_custom_view" template="order/view/view.phtml" />
+        </referenceBlock>
+    </body>
+</page>

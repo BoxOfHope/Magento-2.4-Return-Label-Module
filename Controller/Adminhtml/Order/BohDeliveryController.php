@@ -50,6 +50,11 @@ class BohDeliveryController extends Action
         if (!$order) {
             return $this->resultRedirectFactory->create()->setPath('sales/*/');
         }
+        
+        $labelId = $this->returnLabelFactory->create()->load($order->getEntityId(), 'order_id');
+        if ($labelId->getEntityId()) {
+            return;
+        }
 
         $api_key = $this->getApiKey();
         if (!$api_key) {

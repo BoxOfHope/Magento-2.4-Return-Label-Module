@@ -50,10 +50,10 @@ class BohDeliveryController extends Action
         if (!$order) {
             return $this->resultRedirectFactory->create()->setPath('sales/*/');
         }
-        
+
         $labelId = $this->returnLabelFactory->create()->load($order->getEntityId(), 'order_id');
         if ($labelId->getEntityId()) {
-            return;
+            return null;
         }
 
         $api_key = $this->getApiKey();
@@ -119,10 +119,12 @@ class BohDeliveryController extends Action
 
     private function createRequestDataForGenerateDelivery(OrderAddressInterface $shippingAddress): array
     {
+        $street = $shippingAddress->getStreet();
+
         return [
             "pickup" => [
                 "name" => $shippingAddress->getFirstname() . ' ' . $shippingAddress->getLastname(),
-                "street" =>  $shippingAddress->getStreet(),
+                "street" => strtolower($street[0]),
                 "postcode" => $shippingAddress->getPostcode(),
                 "city" => $shippingAddress->getCity(),
                 "email" => $shippingAddress->getEmail(),

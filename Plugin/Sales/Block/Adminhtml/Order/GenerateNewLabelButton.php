@@ -54,7 +54,7 @@ class GenerateNewLabelButton
             $subject->addButton(
                 'boh_return_label_generate_label_button',
                 [
-                    'label' => __('Generate BoxOhHope label'),
+                    'label' => __('Generate BoxOfHope label'),
                     'class' => __('boh_return_label_generate_label_button') . ' action-secondary',
                     'id' => 'order-view-boh-return-label-generate-label-button',
                     'onclick' => 'setLocation(\'' . $subject->getUrl('boxofhope_returnlabelplugin/order/BohDeliveryController') . '\'); document.getElementById(\'order-view-boh-return-label-generate-label-button\').disabled = true;'
@@ -64,7 +64,7 @@ class GenerateNewLabelButton
             $subject->addButton(
                 'boh_return_label_get_label',
                 [
-                    'label' => __('Download BoxOhHope label'),
+                    'label' => __('Download BoxOfHope label'),
                     'class' => __('boh_return_label_get_label_button') . ' action-secondary',
                     'id' => 'order-view-boh-return-label-get-label-button',
                     'onclick' => 'setLocation(\'' . $subject->getUrl('boxofhope_returnlabelplugin/order/BohLabelController') . '\')'
